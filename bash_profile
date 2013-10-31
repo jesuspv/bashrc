@@ -1,3 +1,2 @@
-if [ -f ~/.bashrc ]; then
-   source ~/.bashrc
-fi
+test -z "$PROFILEREAD" && . /etc/profile
+test -s ~/.bashrc && . ~/.bashrc
