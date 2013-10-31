@@ -5,13 +5,15 @@
 # tab completion with sudo
 complete -cf sudo
 
-# see http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
-shopt -s autocd
-shopt -s cdspell
-shopt -s cdable_vars
-shopt -s dirspell
-shopt -s extglob
-shopt -s globstar
+if [ "${BASH_VERSION%%.*}" -ge 4 ]; then
+   # see http://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
+   shopt -s autocd
+   shopt -s cdspell
+   shopt -s cdable_vars
+   shopt -s dirspell
+   shopt -s extglob
+   shopt -s globstar
+fi
 
 #######################################
 # Variables
