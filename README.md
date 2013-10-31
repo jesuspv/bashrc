@@ -3,8 +3,8 @@ bashrc
 
 Bash Configuration
 
-Configuration
--------------
+Installation
+------------
 
 Assuming that you have cloned the repository at ~/.bashrc.git
 (backup any existing file before):
