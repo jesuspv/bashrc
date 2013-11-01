@@ -2,6 +2,9 @@
 # Config
 #######################################
 
+# global config
+test -s /etc/bashrc && . /etc/bashrc
+
 # tab completion with sudo
 complete -cf sudo
 
@@ -27,9 +30,11 @@ export HISTCONTROL=ignoreboth:erasedups
 export SCREENDIR=$HOME/.screen
 
 #######################################
-# Additional Config
+# Post Config
 #######################################
 
+# aliases
 test -s ~/.alias && . ~/.alias
 
+# user defined
 test -s ~/.bashrc.$USER && . ~/.bashrc.$USER
