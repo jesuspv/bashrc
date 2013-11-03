@@ -1,0 +1,33 @@
+#!/bin/sh
+
+git config --replace-all branch.autosetuprebase always
+   # setup pull --rebase as default for every new branch
+   # or manually for every branch you have with 'git config branch.BRANCH_NAME.rebase true' (replace BRANCH_NAME as required)
+   # Note that you can disable automatic rebasing when needed by 'git pull --no-rebase'
+
+git config --replace-all core.pager "less -r"
+   # required for the 'pl' alias to colorize the output
+
+git config --replace-all core.preloadindex true
+   # to speed up NFS git status command
+   # http://stackoverflow.com/questions/2872587/git-can-i-speed-up-committing
+
+git config --replace-all fetch.prune always
+
+git config --replace-all push.default upstream
+
+git config --replace-all alias.pl "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+   # enables 'git pl' command for pretty logging git history ;)
+
+git config --replace-all alias.st status
+git config --replace-all alias.ci commit
+git config --replace-all alias.co checkout
+git config --replace-all alias.br branch
+git config --replace-all alias.amend "! sh -c 'git add -u :/ && git commit --amend --no-edit'"
+
+git config --replace-all alias.fshow "! sh -c 'git show --pretty=format: --name-only \$1 | grep -v ^\$ | uniq | sed s@^@\`git rev-parse --show-toplevel\`/@' -"
+git config --replace-all alias.vim "! sh -c 'vim \`git fshow \$1\`' -"
+   # to see a list of files changed over the last four revisions, I could type:
+   # $ git fshow HEAD~5..
+   # to open those files for editing, use the second alias:
+   # $ git vim HEAD~5..
