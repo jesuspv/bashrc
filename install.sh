@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$1" == "-g" -o "$1" == "--git" ]; then
+if [[ "$1" =~ ^-(g|-git)$ ]]; then
    GITCONFIG=1
 fi
 
