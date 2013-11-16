@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [[ "$1" =~ ^-(g|-git)$ ]]; then
-   GITCONFIG=1
-fi
+[[ "$1" =~ ^-(h|-help)$ ]] && { echo "usage: `basename $0` [-g|--git]"; exit 0; }
+[[ "$1" =~ ^-(g|-git)$  ]] && { GITCONFIG=1; shift; }
+[[ "$1" == ""           ]] || { echo "error: unknown argument $1"; exit 1; }
 
 BASEDIR=$(dirname "`readlink -f $0`")
 FILES="alias bash_profile bashrc"
