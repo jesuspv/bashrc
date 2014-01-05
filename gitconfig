@@ -12,7 +12,7 @@ git config --global --replace-all core.preloadindex true
    # to speed up NFS git status command
    # http://stackoverflow.com/questions/2872587/git-can-i-speed-up-committing
 
-git config --global --replace-all fetch.prune always
+git config --global --replace-all fetch.prune true
 
 git config --global --replace-all push.default upstream
 
