@@ -24,10 +24,9 @@ fi
 
 export TERM=xterm-256color
 export PS1="\e[1m\!\e[0m \@\n\e[32;1m\u\e[37m@\e[33m\h\e[37m:\e[36m\W\e[37m $\e[0m "
-
 export HISTCONTROL=ignoreboth:erasedups
-
 export SCREENDIR=$HOME/.screen
+export EDITOR=vim
 
 #######################################
 # Post Config
